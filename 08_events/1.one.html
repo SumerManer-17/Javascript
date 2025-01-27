@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML events</title>
+</head>
+<body>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/28751317/pexels-photo-28751317/free-photo-of-heydar-aliyev-center-s-iconic-architecture-in-baku.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/30225215/pexels-photo-30225215/free-photo-of-black-and-white-portrait-of-trendy-individual.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/30315403/pexels-photo-30315403/free-photo-of-friendship-at-howth-cliff-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="google" src="https://images.pexels.com/photos/29204314/pexels-photo-29204314/free-photo-of-modern-city-architecture-against-blue-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //  document.getElementById('owl').onclick=function(){
+    //     alert('owl')
+    //  }
+
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("Owl clicked again")
+    // },false)
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e);    
+    // })
+/////////////////////////////////
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside ul");    
+    // })
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("owl is clicked");
+    //     e.stopPropagation()    
+    // })
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("google is clicked");
+    //     e.preventDefault()    
+    // },false)
+
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName==='IMG'){
+            console.log(e.target.id);
+            let removeIt=e.target.parentNode
+            removeIt.remove()
+        }
+        
+        //removeIt.parentNode.removeChild(removeIt)
+    })
+</script>
+</html>
